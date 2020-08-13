@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 # script to install hl:alyx workshop tools and the windows version side by side with the linux version using steamcmd
 usage="hl_alyx_tools_proton_install.sh STEAM_USERNAME INSTALL_LOCATION EXISTING_GAME_LOCATION"
 if [ $# -eq 0 ]
@@ -32,8 +32,8 @@ else
 	cp -rn "${gamefilespath}" "${installpath}"
 fi
 
-steamcmd +@sSteamCmdForcePlatformType windows +login $1 +force_install_dir "${installpath}"  +app_set_config 546560 optionaldlc "1295040" +app_update 546560 +quit
-steamcmd +@sSteamCmdForcePlatformType windows +login $1 +force_install_dir "${installpath}"  +app_update 546560 validate +quit
+steamcmd +@sSteamCmdForcePlatformType windows +login "$1" +force_install_dir "${installpath}"  +app_set_config 546560 optionaldlc "1295040" +app_update 546560 +quit
+steamcmd +@sSteamCmdForcePlatformType windows +login "$1" +force_install_dir "${installpath}"  +app_update 546560 validate +quit
 
 echo -e "\n\nInstalling custom proton proton-5.0-7-alyx-2 to allow tools to work..."
 
