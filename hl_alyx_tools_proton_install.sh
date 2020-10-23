@@ -7,12 +7,14 @@ if [ $# -eq 0 ]
 	echo -e '\nSTEAM_USERNAME\nYour steam accounts (Which has HL: Alyx), username, for SteamCMD login\n\n'\
 	     'INSTALL_LOCATION\nWhere you want to install the game. For example: "/mnt/HDD/Games/hl_alyx_tools_proton/"\n\n'\
 		 'EXISTING_GAME_LOCATION\nIf you have HL: Alyx (Either Windows or Linux version) installed we can copy common files to save on download time/bandwidth.\n For example: "/mount/HDD/Games/Steam/SteamApps/common/Half-Life Alyx/"\n\n'
-	return
+	return 1 2>/dev/null
+    exit 1
 fi
 if ! command -v steamcmd &> /dev/null
 then
     echo "steamcmd could not be found, exiting."
-	return
+	return 1 2>/dev/null
+    exit 1
 fi
 if [ -z "$2" ]
     then
