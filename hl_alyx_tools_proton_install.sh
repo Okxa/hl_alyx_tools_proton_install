@@ -39,7 +39,7 @@ steamcmd +@sSteamCmdForcePlatformType windows +login "$1" +force_install_dir "${
 
 echo -e "\n\nInstalling custom proton proton-5.0-7-alyx-2 to allow tools to work..."
 
-wget https://github.com/stevenlafl/Proton/releases/download/proton-5.0-7-alyx-2/proton-5.0-7-alyx-2.tar.gz
+wget -nc https://github.com/stevenlafl/Proton/releases/download/proton-5.0-7-alyx-2/proton-5.0-7-alyx-2.tar.gz
 tar -xf proton-5.0-7-alyx-2.tar.gz -C ~/.steam/root/compatibilitytools.d/
 
 echo -e "\nTo finish\n1. Restart Steam\n2. Add ${installpath}game/bin/win64/hlvrcfg.exe to steam as a non steam game\n3. Set it to use proton-5.0-7-alyx-2\n4. Set launch options: %command% -steam -retail"
