@@ -41,3 +41,13 @@ EXISTING_GAME_LOCATION  If you have HL: Alyx (Either Windows or Linux version) i
 2. Add `/game/bin/win64/hlvrcfg.exe` to steam as a non steam game
 3. Set it to use `proton-5.0-7-alyx-2`
 4. Set launch options: `%command% -steam -retail`
+
+## Updating the game.
+
+Simply run the script again with the same settings.
+
+## PSA
+
+**There might be a issue with steam and non-steam games with proton.**
+
+If you get `Proton: No compat data path?` you must launch steam with `STEAM_COMPAT_DATA_PATH=/path/to/folder/ steam`.
