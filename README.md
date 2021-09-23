@@ -50,4 +50,4 @@ Simply run the script again with the same settings.
 
 **There might be a issue with steam and non-steam games with proton.**
 
-If you get `Proton: No compat data path?` you must launch steam with `STEAM_COMPAT_DATA_PATH=/path/to/folder/ steam`.
+If you get `Proton: No compat data path?` in steam log (run steam from a terminal) you must launch steam with `STEAM_COMPAT_DATA_PATH=/path/to/folder/ steam`.
