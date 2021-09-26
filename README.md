@@ -1,3 +1,7 @@
+# PSA!
+
+Nowadays (atleast after 2021.9.27), Proton Experimental seems to run the exe too. But in that case you need to set "START IN" path for the non-steam game shortcut to the install folder (that folder where "content" & "game" folders are) to be able to edit addon content.
+
 # Installation script for a separate install of HL: Alyx SDK tools.
 
 This script installs the Windows version Half-Life: Alyx and its workshop tools DLC with SteamCMD, and installs a patched Proton to allow the tools to run.
