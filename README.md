@@ -1,6 +1,24 @@
 # PSA!
 
-Nowadays (atleast after 2021.9.27), Proton Experimental seems to run the exe too. But in that case you need to set "START IN" path for the non-steam game shortcut to the install folder (that folder where "content" & "game" folders are) to be able to edit addon content.
+## Firstly
+
+Nowadays (atleast after 2021.9.27), Proton Experimental seems to run the tools too.
+
+But in that case you need to set "START IN" path for the non-steam game shortcut to the install folder (that folder where "content" & "game" folders are) to be able to edit addon content.
+
+## Secondly
+
+**There might be a issue with steam and non-steam games with proton.**
+
+If you get `Proton: No compat data path?` in steam log (run steam from a terminal) you must launch steam with `STEAM_COMPAT_DATA_PATH=/path/to/folder/ steam`.
+
+On proton versions 5.13 or newer, you might get other errors, because for some reason steam [does not seem to set the various compat paths correctly](https://github.com/ValveSoftware/steam-runtime/issues/467)
+
+You can start steam with `env STEAM_COMPAT_CLIENT_INSTALL_PATH=~/.local/share/Steam STEAM_EXTRA_COMPAT_TOOLS_PATHS=/path/to/the/proton/install/location STEAM_COMPAT_DATA_PATH=/path/to/desired/compatdata/folder steam`
+
+## Thirdly
+
+**The tools won't work perfectly.** Many views flicker in editors, and for example trying to load maps in the engine **will probably crash**, the more likely the more complex the map is.
 
 # Installation script for a separate install of HL: Alyx SDK tools.
 
@@ -49,9 +67,3 @@ EXISTING_GAME_LOCATION  If you have HL: Alyx (Either Windows or Linux version) i
 ## Updating the game.
 
 Simply run the script again with the same settings.
-
-## PSA
-
-**There might be a issue with steam and non-steam games with proton.**
-
-If you get `Proton: No compat data path?` in steam log (run steam from a terminal) you must launch steam with `STEAM_COMPAT_DATA_PATH=/path/to/folder/ steam`.
