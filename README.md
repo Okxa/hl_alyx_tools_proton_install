@@ -10,11 +10,11 @@ But in that case you need to set "START IN" path for the non-steam game shortcut
 
 **There might be a issue with steam and non-steam games with proton.**
 
-If you get `Proton: No compat data path?` in steam log (run steam from a terminal) you must launch steam with `STEAM_COMPAT_DATA_PATH=/path/to/folder/ steam`.
+If the tools won't start, it is probably because for some reason steam [does not seem to set the various compat paths correctly](https://github.com/ValveSoftware/steam-runtime/issues/467)
 
-On proton versions 5.13 or newer, you might get other errors, because for some reason steam [does not seem to set the various compat paths correctly](https://github.com/ValveSoftware/steam-runtime/issues/467)
+The issue seems to be that Steam reads the `steam_appid.txt` from the install folder and if the appID is anything else than 0, proton fails to set the paths.
 
-You can start steam with `env STEAM_COMPAT_CLIENT_INSTALL_PATH=~/.local/share/Steam STEAM_EXTRA_COMPAT_TOOLS_PATHS=/path/to/the/proton/install/location STEAM_COMPAT_DATA_PATH=/path/to/desired/compatdata/folder steam`
+You can edit the `steam_appid.txt` to set the ID to 0, but it will reset every time. So unless this bug is fixed the workaround is to edit this file every time you start the tools, as it is recreated if deleted, and making it readonly won't work.
 
 ## Thirdly
 
